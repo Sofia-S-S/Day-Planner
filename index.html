@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- Style it -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body onload="startTime()">
+    <didv class="container">
+      <!-- header -->
+      <!-- title, description, date -->
+      <h1>Day Planner</h1>
+      <p>Make sure to fallow your work plan</p>
+      <p>Today:<span id="datetime"></span></p>
+      <!-- content -->
+      <!-- table -->
+      <table>
+        <!--Row 9AM--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">9 am</td>
+          <td><textarea id="hour-9">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-9">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+        <!--Row 10AM--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">10 am</td>
+          <td><textarea id="hour-10">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-10">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+        <!--Row 11AM--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">11 am</td>
+          <td><textarea id="hour-11">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-11">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+        <!--Row 12pM--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">12 pm</td>
+          <td><textarea id="hour-12">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-12">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+        <!--Row 10AM--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">1 pm</td>
+          <td><textarea id="hour-1">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-1">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+        <!--Row 2pm--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">2 pm</td>
+          <td><textarea id="hour-2">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-2">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+        <!--Row 3pm--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">3 pm</td>
+          <td><textarea id="hour-3">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-3">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+        <!--Row 4pm--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">4 pm</td>
+          <td><textarea id="hour-4">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-4">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+
+        <!--Row 5pm--3 columns: string | text area | button-->
+        <tr>
+          <td align="center" class="timeStyle">5 pm</td>
+          <td><textarea id="hour-5">Nothing Planned</textarea></td>
+          <td>
+            <button class="js-save" data-key="hour-5">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </didv>
+    <!--close container-->
+    <script src="./app.js"></script>
+  </body>
+</html>
