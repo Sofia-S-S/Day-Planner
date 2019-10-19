@@ -6,14 +6,40 @@ function startTime() {
   var t = setTimeout(startTime, 500);
   // cheack current hour
   var hourNow = dt.getHours();
-  console.log(hourNow);
+
+  //compare current hour to task hour and change color
+  $(".timeBlock").each(function() {
+    var blockHour = parseInt($(this).attr("id"));
+    /* color the tr present*/
+    if (blockHour > hourNow) {
+      $(this)
+        .children("td")
+        .eq(1)
+        .children("textarea")
+        .attr("style", "background: gray");
+    } else if (blockHour === hourNow) {
+      /* color the tr past*/
+      $(this)
+        .children("td")
+        .eq(1)
+        .children("textarea")
+        .attr("style", "background: red");
+    } else {
+      /* color the tr past*/
+      $(this)
+        .children("td")
+        .eq(1)
+        .children("textarea")
+        .attr("style", "background: yellow");
+    }
+  });
 }
 /* helper functions */
 
 /* events */
 $(document).ready(function() {
   var dailyTasks = JSON.parse(localStorage.getItem("myDay")) || {};
-  console.log(dailyTasks);
+
   /* clicking save button */
   $(".js-save").on("click", function() {
     /* get the key and the value */
@@ -40,80 +66,3 @@ $(document).ready(function() {
   $("#hour-4").val(dailyTasks["hour-4"]);
   $("#hour-5").val(dailyTasks["hour-5"]);
 });
-
-//compare current hour to task hour and change color
-/*if ((hourNow = 9)) {
-    $("#hour-9").css("background", "red");
-  }
-  if ((hourNow = 10)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "red");
-  }
-  if ((hourNow = 11)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "gray");
-    $("#hour-11").css("background", "red");
-  }
-  if ((hourNow = 12)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "gray");
-    $("#hour-11").css("background", "gray");
-    $("#hour-12").css("background", "red");
-  }
-  if ((hourNow = 1)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "gray");
-    $("#hour-11").css("background", "gray");
-    $("#hour-12").css("background", "gray");
-    $("#hour-1").css("background", "red");
-  }
-  if ((hourNow = 2)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "gray");
-    $("#hour-11").css("background", "gray");
-    $("#hour-12").css("background", "gray");
-    $("#hour-1").css("background", "gray");
-    $("#hour-2").css("background", "red");
-  }
-  if ((hourNow = 3)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "gray");
-    $("#hour-11").css("background", "gray");
-    $("#hour-12").css("background", "gray");
-    $("#hour-1").css("background", "gray");
-    $("#hour-2").css("background", "gray");
-    $("#hour-3").css("background", "red");
-  }
-  if ((hourNow = 4)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "gray");
-    $("#hour-11").css("background", "gray");
-    $("#hour-12").css("background", "gray");
-    $("#hour-1").css("background", "gray");
-    $("#hour-2").css("background", "gray");
-    $("#hour-3").css("background", "gray");
-    $("#hour-4").css("background", "red");
-  }
-  if ((hourNow = 5)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "gray");
-    $("#hour-11").css("background", "gray");
-    $("#hour-12").css("background", "gray");
-    $("#hour-1").css("background", "gray");
-    $("#hour-2").css("background", "gray");
-    $("#hour-3").css("background", "gray");
-    $("#hour-4").css("background", "gray");
-    $("#hour-5").css("background", "red");
-  }
-  if ((hourNow = 5)) {
-    $("#hour-9").css("background", "gray");
-    $("#hour-10").css("background", "gray");
-    $("#hour-11").css("background", "gray");
-    $("#hour-12").css("background", "gray");
-    $("#hour-1").css("background", "gray");
-    $("#hour-2").css("background", "gray");
-    $("#hour-3").css("background", "gray");
-    $("#hour-4").css("background", "gray");
-    $("#hour-5").css("background", "red");
-  }*/
-/*document.body.textarea.style.backgroundColor = "red";*/
